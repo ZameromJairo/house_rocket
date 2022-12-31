@@ -234,7 +234,6 @@ def gr_model2(data,column,type):
     return st.altair_chart(gr, theme="streamlit", use_container_width=True)
 def gr_model3(data,column):
     fig = px.scatter_mapbox(data,
-                            text='price',
                             lat="lat",
                             lon="long",
                             color=column,
