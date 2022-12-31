@@ -6,7 +6,7 @@ House Rocket is a fictional company which make profit buying and selling Houses 
 
 - Perform exploratory data analysis on properties available on dataset.
 - Determine which properties should be purchased according to business criteria.
-- Develop an online dashboard that can be accessed by the CEO from a mobile or computer.
+- Develop an online [dashboard](https://zameromjairo-house-rocket-dashboard-fgfvox.streamlit.app) that can be accessed by the CEO from a mobile or computer.
 
 # 1. Business Problem
 
