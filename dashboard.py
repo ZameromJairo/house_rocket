@@ -252,7 +252,7 @@ def set_home(df, tab, data):
             'House Rocket is a fictional company which make profit buying and selling Houses in King County (USA).')
         st.markdown('As the portfolio of houses are too large, is difficult to filter what are the good opportunity.')
         st.markdown('This app were built to help find the best opportunities using the **Businesses Criteria**.')
-        st.info('Checkout the complete Repository on [Github](LINK)', icon="ℹ️")
+        st.info('Checkout the complete Repository on [Github](https://github.com/ZameromJairo/house_rocket)', icon="ℹ️")
         # =============== MARKER 1 ================
         st.header('**1. Objectives**')
         st.markdown('- Perform exploratory data analysis on properties available on dataset.')
