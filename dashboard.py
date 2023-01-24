@@ -38,17 +38,17 @@ def ft_waterfront(data):
 def ft_condition(data):
     data['condition'] = pd.Categorical(data['condition'])
     data['condition'] = data['condition'].cat.rename_categories(
-        {1: 'bad', 2: 'fair', 3: 'average', 4: 'good', 5: 'excelent'})
+        {1: 'very bad', 2: 'bad', 3: 'average', 4: 'good', 5: 'excelent'})
     return data
 
 def ft_view(data):
     data['view'] = pd.Categorical(data['view'])
-    data['view'] = data['view'].cat.rename_categories({0: 'no view', 1: 'fair', 2: 'average', 3: 'good', 4: 'excelent'})
+    data['view'] = data['view'].cat.rename_categories({0: 'no view', 1: 'bad', 2: 'average', 3: 'good', 4: 'excelent'})
     return data
 
 def ft_grade(data):
-    data['grade'] = data['grade'].apply(lambda x: "poor" if x <= 3 else
-    "fair" if x <= 5 else
+    data['grade'] = data['grade'].apply(lambda x: "very poor" if x <= 3 else
+    "poor" if x <= 5 else
     "average" if x <= 8 else
     "good" if x <= 10 else
     "excelent" if x <= 13 else 'na')
@@ -251,7 +251,7 @@ def set_home(df, tab, data):
         st.markdown(
             'House Rocket is a fictional company which make profit buying and selling Houses in King County (USA).')
         st.markdown('As the portfolio of houses are too large, is difficult to filter what are the good opportunity.')
-        st.markdown('This app were built to help find the best opportunities using the **Businesses Criteria**.')
+        st.markdown('This app was built to help find the best opportunities using the **Businesses Criteria**.')
         st.info('Checkout the complete Repository on [Github](https://github.com/ZameromJairo/house_rocket)', icon="ℹ️")
         # =============== MARKER 1 ================
         st.header('**1. Objectives**')
@@ -269,14 +269,14 @@ def set_home(df, tab, data):
         # =============== MARKER 3 ================
         st.header('**3. Business Assumptions**')
         st.markdown('- There may be typos in some records that must be dealt with/removed during data cleaning.')
-        st.markdown('- There may be houses without a complete bathroom, those houses won’t be consider for buy')
+        st.markdown('- There may be houses without a complete bathroom, those houses won’t be considered to buy')
         st.markdown('- The data available is only from Houses already sold between May 2014 to May 2015.')
         st.markdown('''- Seasons of the year:
     - Spring starts on March 21st.
     - Summer starts on June 21st.
     - Fall starts on September 23rd.
     - Winter starts on December 21st.''')
-        st.markdown('- If the ‘yr_renovated’ is null, will be assumed that ‘yr_renovated’ = ‘yr_built‘')
+        st.markdown('- If the ‘yr_renovated’ is null, will be assumed that ‘last_maintenance’ is ‘yr_built‘')
 
         with st.expander('**The variable on original Dataset goes as follows:**'):
             st.markdown('''
@@ -387,9 +387,9 @@ def set_exploratory_analisys(data, tab):
             gr_model1(data=data, column='floors')
 
         st.markdown('#### Observations')
-        st.markdown('- Most of houses has between 2 and 5 bedrooms (97,68%)')
-        st.markdown('- Most of houses has between 1 and 3 bathrooms (98,13%)')
-        st.markdown('- Most of houses has between 1 and 2 floors (96,36%)')
+        st.markdown('- Most houses have between 2 and 5 bedrooms (97,68%)')
+        st.markdown('- Most houses have between 1 and 3 bathrooms (98,13%)')
+        st.markdown('- Most houses have between 1 and 2 floors (96,36%)')
 
         # =============== MARKER 2.2 ================
         st.markdown('### 2.2. Time Series: Year Built, Year Renovated and Last Maintenance')
@@ -432,12 +432,12 @@ def set_exploratory_analisys(data, tab):
                 gr_model1(data=data, column='half_bathroom')
 
             st.markdown('''#### Observations
-- Most of Houses doesn't have View (90.15%)
-- Most of Houses are in average, good or excelent conditions (99.13%)
-- Most of Houses are in average or good grade (96.57%)
-- Most of Houses were sold in Spring (31.50%).
-- Most of Houses doesn't have waterfront (99.26%)
-- Most of Houses have a Half Bathroom (69.00%)''')
+- Most Houses don't have View (90.15%)
+- Most Houses have average, good or excelent conditions (99.13%)
+- Most Houses have average or good grade (96.57%)
+- Most Houses were sold in Spring (31.50%).
+- Most Houses doesn't have waterfront (99.26%)
+- Most Houses have a Half Bathroom (69.00%)''')
         # =============== MARKER 4 ================
         with container3:
             st.header('**4. Variable Correlations**')
