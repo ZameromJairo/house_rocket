@@ -87,8 +87,6 @@ House Rocket is a fictional company which make profit buying and selling Houses 
 
 # 5. Business Results
 
-************Reference →************ 
-
 There are 21,351 available properties. Based on business criteria, 214 selected properties should be bought by House Rocket resulting on a US$730.86M profit.
 
 Necessary Investment: US$935.07M
